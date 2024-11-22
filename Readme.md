@@ -1,10 +1,15 @@
 # Online Gaming Service - Database Final
 
 ## Re-runnable creation script
-The DLL to re create the schema, with its tables, views, sequences, procedures and functions can be found in *Creation/DLL/gamestore.sql*
-All the data that is currently in the database, can be imported with the sql statemets found in *Creation/DML* each different table has a file in it.
+- The DLL to re create the schema, with its tables, views, sequences, procedures and functions can be found in *Creation/DLL/gamestore.sql* 
+- All the data that is currently in the database, can be imported with the sql statemets found in *Creation/DML* each different table has a file in it.
 
 ## Documentiation for data generation process
+
+- The csv file that contains all the data for game_usage can be found in ~Data/data.csv~
+- After importing it, we used two queries to pass the data from the csv file to our table. 
+  - The reason we used two different queries, was because there were some parsing problems with dates, so we were able to do the first half with one query and the other half with the other.
+  - The Queries used can be found in *Data/insert_game_usage.sql* 
 
 ## Proofs
 - The different sql queries for proofs can be found in /Proofs/Proof.sql
