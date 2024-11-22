@@ -1,7 +1,8 @@
 # Online Gaming Service - Database Final
 
 ## Re-runnable creation script
-The code to re create the schema can be found in /DLL/gamestore.sql
+The DLL to re create the schema, with its tables, views, sequences, procedures and functions can be found in *Creation/DLL/gamestore.sql*
+All the data that is currently in the database, can be imported with the sql statemets found in *Creation/DML* each different table has a file in it.
 
 ## Documentiation for data generation process
 
