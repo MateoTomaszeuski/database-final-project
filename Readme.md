@@ -29,10 +29,7 @@ private static randDeveloper(id: number): Developer {
 ```
   - Game names are randomly selected to be within 0-4 of the preset feature packs and assigned a random developer.
 ```
-public static randGames(
-  devs: Array<Developer>,
-  features: Array<FeaturePack>
-): Array<Game> {
+public static randGames(devs: Array<Developer>, features: Array<FeaturePack>): Array<Game> {
   let outGames: Array<Game> = [];
   for (let i = 0; i < games.length; i++) {
     let featureArray: Array<number> = [];
@@ -67,7 +64,7 @@ public runDate(expectedNumber: number): void {
 }
 ```
 
-From there, we are now able to run a day on the sim. It starts on the 19th of November of this year, and increments to the next day automatically (assuming you aren't capping it). For each day, it performs the following steps: 
+From there, we are now able to run a day on the sim. It starts on the 19th of November of this year, and increments to the next day automatically (assuming the total still hasn't been reached). For each day, it performs the following steps: 
   - Generates new players
     - Generates 1-5 new players (a pseudo-normal distribution around 3) with a random name
     - Assigns them a subscription and their payment length
@@ -121,7 +118,7 @@ private generateNewPlayers() {
   - Ticks all players
     - Checks if a subscription needs to be paid, and if so, pays it, considering to unsubscribe them as well
     - Checks if any feature packs need to be paid, pays them, and randomly decides to pay for new packs
-    - Gets all possible games they can playy, decides how many games to play for that day, randomly gets 2x the number of random date-times and sorts them, the adds them to Games Played in that order.
+    - Gets all possible games they can play, decides how many games to play for that day, randomly gets 2x the number of random date-times and sorts them, the adds them to Games Played in that order.
     - Repeat for all players
 ```
 private tickAllPlayers() {
@@ -154,6 +151,7 @@ private tickAllPlayers() {
   }
 }
 ```
+After that, it increments the day and App.tsx decides whether to call another day or not. 
 
 - The csv file that contains all the data for game_usage can be found in ~Data/data.csv~
 - After importing it, we used two queries to pass the data from the csv file to our table. 
