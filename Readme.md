@@ -160,15 +160,15 @@ After that, it increments the day and App.tsx decides whether to call another da
 
 ## Proofs
 - The different sql queries for proofs can be found in /Proofs/Proof.sql
-### Key application features
-- Users have one active subscription type, but multiple feature packs
-- A history of all prior subscriptions for a user needs to be easily produced
+### Key application features - Grade the ones in bold.
+- **Users have one active subscription type, but multiple feature packs**
+- **A history of all prior subscriptions for a user needs to be easily produced**
 - Every time a user logs on to our service, 
     - we validate their account, 
     - validate concurrent login limits
     - log the attempt (success or failure)
 - Every time the user plays a game we track it
-- We can produce reports on which games get the most usage
+- **We can produce reports on which games get the most usage**
 - Revenue Sharing:  We need to share a % of all our revenue with the game developers
     - BaseSubscription Revenue Sharing
         - Calculate this based the formula
